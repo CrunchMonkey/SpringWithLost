@@ -11,6 +11,10 @@
     	background-color: #F7D99D;
     	padding: 10px;
     }
+   [class ^="col-md"] {
+   	padding: 0px;
+   	margin: 0px;
+   }
     .sortableDiv{
     	padding: 15px 15px 15px 15px;
     	background-color: #1C1C20;
@@ -18,6 +22,9 @@
     }
     .row{
     	margin: 0px;
+    }
+    .list-group-item {
+    	line-height: 10px;
     }
   </style>
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
@@ -28,9 +35,14 @@
 		$("#firstPartysortable, secondPartysortable, playerSortable").sortable({ scroll: false});
 		
 		$("ul.droptrue").sortable({
-			update: function( ) {
-		        //alert("호잇");
-		    },
+			remove: function( event, ui ) {
+				//alert("출발 테이블은 : " + $(this).attr("id"));
+				//alert("출발 데이터id는 : " + ui.item[0].id);
+			},
+			receive: function(event, ui) {
+				//alert("도착 테이블은 : " + $(this).attr("id"));
+				//alert("도착 데이터id는 : " + ui.item[0].id);
+			},
 			connectWith: "ul"
 		});
 	  } 
@@ -39,71 +51,257 @@
 </head>
 <body>
 	<!-- 전체화면 -->
-	<div class="container" style="width: 1500px; height: 2560px; margin: 0px">
-		<div class="row">
+	<div class="container" style="width: 1500px; height: 1280px; margin: 0px">
+		<div class="row" style="width: 100%; height: 100%">
+			<div class="col-md-9" style="height: 45%;">
+				<div class="container" style="width: 100%; height: 100%; padding: 0px">
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">전사</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">디스트로이어</li>
+								<li class="list-group-item" style="">워로드</li>
+								<li class="list-group-item" style="">버서커</li>
+								<li class="list-group-item" style="">홀리나이트</li>
+								<li class="list-group-item" style="">슬레이어</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">무도가</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">스트라이커</li>
+								<li class="list-group-item" style="">배틀마스터</li>
+								<li class="list-group-item" style="">인파이터</li>
+								<li class="list-group-item" style="">기공사</li>
+								<li class="list-group-item" style="">창술사</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">헌터</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">데빌헌터</li>
+								<li class="list-group-item" style="">블래스터</li>
+								<li class="list-group-item" style="">호크아이</li>
+								<li class="list-group-item" style="">스카우터</li>
+								<li class="list-group-item" style="">건슬링어</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">마법사</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">바드</li>
+								<li class="list-group-item" style="">서머너</li>
+								<li class="list-group-item" style="">아르카나</li>
+								<li class="list-group-item" style="">소서리스</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">암살자</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">데모닉</li>
+								<li class="list-group-item" style="">블레이드</li>
+								<li class="list-group-item" style="">리퍼</li>
+								<li class="list-group-item" style="">소울이터</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">스폐셜리스트</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">도화가</li>
+								<li class="list-group-item" style="">기상술사</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">미정</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">금강선</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-md-3" style="height: 50%;">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">미정</font></a>
+							  </div>
+							</nav>
+							<ul id="" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li class="list-group-item" style="">금강선</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!-- 유저검색창 -->
+			<div class="col-md-3" style="height: 45%; background-color: orange">
+			</div>
+			
+			<!-- 1파티 -->
+			<div class="col-md-3" style="height: 25%;">
+				<div class="col-md-12 sortableDiv">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+					  <div class="container-fluid" style="border: solid #F7D99D 1px">
+					    <a class="navbar-brand" href="#"><font color="#F7D99D">1파티</font></a>
+					  </div>
+					</nav>
+					<ul id="firstPartysortable" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+						<li class="list-group-item" style="">Dog</li>
+						<li class="list-group-item" style="">Dog</li>
+						<li class="list-group-item" style="">Dog</li>
+						<li class="list-group-item" style="">Dog</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 1파티 시너지 -->
+			<div class="col-md-9" style="height: 25%; background-color: green">
+			</div>
+			
+			<!-- 2파티 -->
+			<div class="col-md-3" style="height: 25%;">
+				<div class="col-md-12 sortableDiv">
+					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+					  <div class="container-fluid" style="border: solid #F7D99D 1px">
+					    <a class="navbar-brand" href="#"><font color="#F7D99D">2파티</font></a>
+					  </div>
+					</nav>
+					<ul id="secondPartysortable" class="list-group droptrue ui-sortable" style="padding-left: 10px">
+						<li class="list-group-item">Dog</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 2파티 시너지 -->
+			<div class="col-md-9" style="height: 25%; background-color: green">
+			</div>
+			
 			<!-- 파티와 시너지 화면 -->
-			<div class="col-sm-4">
-				<div style="width: 100%; height: 50%">
-				</div>
-				<div style="width: 100%; height: 50%">
-				</div>
-			</div>
-			<!-- 파티원후보화면 -->
-			<div class="col-sm-3">
-			</div>
-			<!-- 검색결과 -->
-			<div class="col-sm-5">
-			</div>
-		</div>
-	</div>
-	<!-- <div style="width: 100%; height: 1080px;">
-		<div style="width: 40%; height: 100%; float: left;">
-			<div style="width: 100%; height: 50%; float: left;">
-				<div class="row" style="width: 100%; height: 100%;">
+			<!-- <div class="col-md-5" style="height: 100%">
+				1파티, 2파티
+				<div style="width: 100%; height: 100%">
 					1파티
-					<div class="col-md-6 sortableDiv">
-						<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
-						  <div class="container-fluid" style="border: solid #F7D99D 5px">
-						    <a class="navbar-brand" href="#"><font color="#F7D99D">1파티</font></a>
-						  </div>
-						</nav>
-						<ul id="firstPartysortable" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
-  							<li class="list-group-item">Dog</li>
-						</ul>
+					<div style="width: 50%; height: 25%; float: left; background-color: red">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">1파티</font></a>
+							  </div>
+							</nav>
+							<ul id="firstPartysortable" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+	  							<li class="list-group-item">Dog</li>
+							</ul>
+						</div>
 					</div>
 					2파티
-					<div class="col-md-6 sortableDiv">
-						<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
-						  <div class="container-fluid" style="border: solid 1px">
-						    <a class="navbar-brand" href="#"><font color="#F7D99D">2파티</font></a>
-						  </div>
-						</nav>
-						<ul id="secondPartysortable" class="list-group droptrue ui-sortable" style="padding-left: 10px">
-							<li class="list-group-item">Dog</li>
-						</ul>
+					<div style="width: 50%; height: 25%; float: left; background-color: orange">
+						<div class="col-md-12 sortableDiv">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid #F7D99D 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">2파티</font></a>
+							  </div>
+							</nav>
+							<ul id="secondPartysortable" class="list-group droptrue ui-sortable" style="padding-left: 10px">
+								<li class="list-group-item">Dog</li>
+							</ul>
+						</div>
+					</div>
+					1파티 상시 시너지
+					<div id="firstPartyAlwaysSynergy" style="width: 50%; height: 25%; float: left; background-color: green">
+						<p>1파티 상시 시너지</p>
+					</div>
+					2파티 상시 시너지
+					<div id="secondPartyAlwaysSynergy" style="width: 50%; height: 25%; float: left; background-color: blue">
+						<p>2파티 상시 시너지</p>
+					</div>
+					1파티 순간 시너지
+					<div style="width: 50%; height: 25%; float: left; background-color: yellow">
+						<p>1파티 순간 시너지</p>
+					</div>
+					2파티 순간 시너지
+					<div style="width: 50%; height: 25%; float: left; background-color: black">
+						<p>2파티 순간 시너지</p>
+					</div>
+					1파티 추천
+					<div style="width: 100%; height: 12%; float: left; background-color: yellow">
+						<p>1파티 추천</p>
+					</div>
+					2파티 추천
+					<div style="width: 100%; height: 13%; float: left; background-color: black">
+						<p>2파티 추천</p>
 					</div>
 				</div>
-			</div>
-			<div style="width: 100%; height: 50%; float: left; background-color: blue">
-				
-			</div>
+			</div> -->
+			<!-- 파티원후보화면 -->
+			<!-- <div class="col-md-3" style="height: 100%">
+				<div style="width: 100%; height: 100%">
+					<div style="width: 100%; height: 100%; background-color: black">
+						<div class="sortableDiv"style="width: 100%; height: 100%; float: left;">
+							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
+							  <div class="container-fluid" style="border: solid 1px">
+							    <a class="navbar-brand" href="#"><font color="#F7D99D">파티원</font></a>
+							  </div>
+							</nav>
+							<ul id="partyCandidate" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
+								<li id="dohwaga" class="list-group-item">도화가</li>
+								<li class="list-group-item">슬레이어</li>
+								<li class="list-group-item">블래스터</li>
+								<li class="list-group-item">배틀마스터</li>
+								<li class="list-group-item">창술사</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!-- 검색결과 -->
+			<!-- <div class="col-md-4" style="height: 100%">
+				<div style="width: 100%; height: 100%">
+					<div style="width: 100%; height: 100%; background-color: magenta">
+					</div>
+				</div>
+			</div> -->
 		</div>
-		<div class="sortableDiv"style="width: 20%; height: 100%; float: left;">
-			<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
-			  <div class="container-fluid" style="border: solid 1px">
-			    <a class="navbar-brand" href="#"><font color="#F7D99D">파티원</font></a>
-			  </div>
-			</nav>
-			<ul id="dd" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
-				<li class="list-group-item">도화가</li>
-				<li class="list-group-item">슬레이어</li>
-				<li class="list-group-item">블래스터</li>
-				<li class="list-group-item">배틀마스터</li>
-				<li class="list-group-item">창술사</li>
-			</ul>
-		</div>
-		<div style="width: 40%; height: 100%; float: left; background-color: green">
-		</div>
-	</div> -->
+	</div>
 </body>
 </html>
