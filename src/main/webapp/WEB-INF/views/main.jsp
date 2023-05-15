@@ -51,7 +51,7 @@
 </head>
 <body>
 	<!-- 전체화면 -->
-	<div class="container" style="width: 1500px; height: 1280px; margin: 0px">
+	<div class="container" style="width: 1620px; height: 1280px; margin: 0px">
 		<div class="row" style="width: 100%; height: 100%">
 			<div class="col-md-9" style="height: 45%;">
 				<div class="container" style="width: 100%; height: 100%; padding: 0px">
@@ -179,7 +179,7 @@
 			</div>
 			
 			<!-- 1파티 -->
-			<div class="col-md-3" style="height: 25%;">
+			<div class="col-md-2" style="height: 25%;">
 				<div class="col-md-12 sortableDiv">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 					  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -196,11 +196,18 @@
 			</div>
 			
 			<!-- 1파티 시너지 -->
-			<div class="col-md-9" style="height: 25%; background-color: green">
+			<div class="col-md-10" style="height: 25%; background-color: #1C1C20; padding: 15px">
+				<!-- 1파티 상시 시너지 -->
+				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+					<p><font color="#1C1C20" size="10px">요이땅</font></p>
+				</div>
+				<!-- 1파티 순간 시너지 -->
+				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+				</div>
 			</div>
 			
 			<!-- 2파티 -->
-			<div class="col-md-3" style="height: 25%;">
+			<div class="col-md-2" style="height: 25%;">
 				<div class="col-md-12 sortableDiv">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 					  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -214,93 +221,34 @@
 			</div>
 			
 			<!-- 2파티 시너지 -->
-			<div class="col-md-9" style="height: 25%; background-color: green">
+			<div class="col-md-10" style="height: 25%; background-color: #1C1C20; padding: 15px">
+				<!-- 2파티 상시 시너지 -->
+				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+					<ul class="list-group">
+					  <li class="list-group-item d-flex justify-content-between align-items-center">
+					    <span class="badge" style="background-color: red">용맹의포효</span>
+					    <span class="badge" style="background-color: blue">배틀마스터</span>
+					    <span class="badge" style="background-color: green">순간</span>
+					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
+					  </li>
+					  <li class="list-group-item d-flex justify-content-between align-items-center">
+					    <span class="badge" style="background-color: red">증오의함성</span>
+					    <span class="badge" style="background-color: blue">워로드</span>
+					    <span class="badge" style="background-color: orange">순간</span>
+					    12.0초간 약점을 노출시켜 대상이 자신 및 파티원에게 받는 피해를 4.0% 증가시킨다.헤드 어택 및 백 어택의 경우, 받는 피해 효과가 추가로 5.0% 증가한다.
+					  </li>
+					  <li class="list-group-item d-flex justify-content-between align-items-center">
+					    <span class="badge" style="background-color: red">배쉬</span>
+					    <span class="badge" style="background-color: blue">워로드</span>
+					    <span class="badge" style="background-color: green">상시</span>
+					    공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.
+					  </li>
+					</ul>
+				</div>
+				<!-- 2파티 순간 시너지 -->
+				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+				</div>
 			</div>
-			
-			<!-- 파티와 시너지 화면 -->
-			<!-- <div class="col-md-5" style="height: 100%">
-				1파티, 2파티
-				<div style="width: 100%; height: 100%">
-					1파티
-					<div style="width: 50%; height: 25%; float: left; background-color: red">
-						<div class="col-md-12 sortableDiv">
-							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
-							  <div class="container-fluid" style="border: solid #F7D99D 1px">
-							    <a class="navbar-brand" href="#"><font color="#F7D99D">1파티</font></a>
-							  </div>
-							</nav>
-							<ul id="firstPartysortable" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
-	  							<li class="list-group-item">Dog</li>
-							</ul>
-						</div>
-					</div>
-					2파티
-					<div style="width: 50%; height: 25%; float: left; background-color: orange">
-						<div class="col-md-12 sortableDiv">
-							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
-							  <div class="container-fluid" style="border: solid #F7D99D 1px">
-							    <a class="navbar-brand" href="#"><font color="#F7D99D">2파티</font></a>
-							  </div>
-							</nav>
-							<ul id="secondPartysortable" class="list-group droptrue ui-sortable" style="padding-left: 10px">
-								<li class="list-group-item">Dog</li>
-							</ul>
-						</div>
-					</div>
-					1파티 상시 시너지
-					<div id="firstPartyAlwaysSynergy" style="width: 50%; height: 25%; float: left; background-color: green">
-						<p>1파티 상시 시너지</p>
-					</div>
-					2파티 상시 시너지
-					<div id="secondPartyAlwaysSynergy" style="width: 50%; height: 25%; float: left; background-color: blue">
-						<p>2파티 상시 시너지</p>
-					</div>
-					1파티 순간 시너지
-					<div style="width: 50%; height: 25%; float: left; background-color: yellow">
-						<p>1파티 순간 시너지</p>
-					</div>
-					2파티 순간 시너지
-					<div style="width: 50%; height: 25%; float: left; background-color: black">
-						<p>2파티 순간 시너지</p>
-					</div>
-					1파티 추천
-					<div style="width: 100%; height: 12%; float: left; background-color: yellow">
-						<p>1파티 추천</p>
-					</div>
-					2파티 추천
-					<div style="width: 100%; height: 13%; float: left; background-color: black">
-						<p>2파티 추천</p>
-					</div>
-				</div>
-			</div> -->
-			<!-- 파티원후보화면 -->
-			<!-- <div class="col-md-3" style="height: 100%">
-				<div style="width: 100%; height: 100%">
-					<div style="width: 100%; height: 100%; background-color: black">
-						<div class="sortableDiv"style="width: 100%; height: 100%; float: left;">
-							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
-							  <div class="container-fluid" style="border: solid 1px">
-							    <a class="navbar-brand" href="#"><font color="#F7D99D">파티원</font></a>
-							  </div>
-							</nav>
-							<ul id="partyCandidate" class="list-group droptrue ui-sortable"  style="padding-left: 10px">
-								<li id="dohwaga" class="list-group-item">도화가</li>
-								<li class="list-group-item">슬레이어</li>
-								<li class="list-group-item">블래스터</li>
-								<li class="list-group-item">배틀마스터</li>
-								<li class="list-group-item">창술사</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div> -->
-			<!-- 검색결과 -->
-			<!-- <div class="col-md-4" style="height: 100%">
-				<div style="width: 100%; height: 100%">
-					<div style="width: 100%; height: 100%; background-color: magenta">
-					</div>
-				</div>
-			</div> -->
 		</div>
 	</div>
 </body>
