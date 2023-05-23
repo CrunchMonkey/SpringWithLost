@@ -39,13 +39,9 @@
 		
 		var destroyerSynergyArr = [];
 		var gunlancerSynergyArr = [];
-		var json = {'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'};
-		
-		
-		
-		//$("#firstPartysortable, secondPartysortable, playerSortable").sortable({ scroll: false});
-		
-
+		var json = [{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'},
+			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '증오의 함성', 'kind' : '순간', 'effect' : '12.0초간 약점을 노출시켜 대상이 자신 및 파티원에게 받는 피해를 4.0% 증가시킨다.헤드 어택 및 백 어택의 경우, 받는 피해 효과가 추가로 5.0% 증가한다..'},
+			]; //추후 데이터베이스로 관리 예정
 		
 		//sortTable
 		$("ul.droptrue").sortable({
@@ -59,14 +55,8 @@
 				} else if($("#" + startUlId).hasClass("classSortTable") && $(this).hasClass("partySortTable")){ //클래스 -> 파티
 					$("#" + startUlId).append(startLiHtml); //클래스 채워주기
 				} else if($("#" + startUlId).hasClass("partySortTable") && $(this).hasClass("classSortTable")){ //파티 -> 클래스
-					if(this.id == ui.item[0].parentElement.id) {
-						alert("제자리");
-					} else{
-						alert("제자리아님");
-					}
-					//var uiId = ui.item[0].id;
-					//$("#defaultWarrior #destroyer").remove();
-					//$("#"+this.id + " #" + uiId).remove();
+					$("#" + this.id + " #" + ui.item[0].id).first().remove(); //클래스 삭제
+					
 				}	
 			},
 			connectWith: "ul"
@@ -93,11 +83,11 @@
 							  </div>
 							</nav>
 							<ul id="defaultWarrior" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li id="destroyer" class="list-group-item" style="">디스트로이어</li>
-								<li id="gunlancer" class="list-group-item" style="">워로드</li>
-								<li id="berserker" class="list-group-item" style="">버서커</li>
-								<li id="paladin" class="list-group-item" style="">홀리나이트</li>
-								<li id="Slayer" class="list-group-item" style="">슬레이어</li>
+								<li id="destroyer" class="list-group-item defaultWarrior" style="">디스트로이어</li>
+								<li id="gunlancer" class="list-group-item defaultWarrior" style="">워로드</li>
+								<li id="berserker" class="list-group-item defaultWarrior" style="">버서커</li>
+								<li id="paladin" class="list-group-item defaultWarrior" style="">홀리나이트</li>
+								<li id="Slayer" class="list-group-item defaultWarrior" style="">슬레이어</li>
 							</ul>
 						</div>
 					</div>
@@ -229,6 +219,14 @@
 			<div class="col-md-10" style="height: 25%; background-color: #1C1C20; padding: 15px">
 				<!-- 1파티 상시 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+					<ul id="firstPartyConstantSynergy" class="list-group">
+					  <li class="list-group-item d-flex justify-content-between align-items-center">
+					    <span class="badge" style="background-color: red">용맹의포효</span>
+					    <span class="badge" style="background-color: blue">배틀마스터</span>
+					    <span class="badge" style="background-color: green">순간</span>
+					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
+					  </li>
+					</ul>
 				</div>
 				<!-- 1파티 순간 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
@@ -251,9 +249,9 @@
 			
 			<!-- 2파티 시너지 -->
 			<div class="col-md-10" style="height: auto; background-color: #1C1C20; padding: 15px">
-				<!-- 2파티 상시 시너지 -->
+				<!-- 2파티 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
-					<ul class="list-group">
+					<ul id="secondPartyConstantSynergy" class="list-group">
 					  <li class="list-group-item d-flex justify-content-between align-items-center">
 					    <span class="badge" style="background-color: red">용맹의포효</span>
 					    <span class="badge" style="background-color: blue">배틀마스터</span>
@@ -276,6 +274,14 @@
 				</div>
 				<!-- 2파티 순간 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+					<ul id="secondPartyMomentSynergy" class="list-group">
+					  <li class="list-group-item d-flex justify-content-between align-items-center">
+					    <span class="badge" style="background-color: red">용맹의포효</span>
+					    <span class="badge" style="background-color: blue">배틀마스터</span>
+					    <span class="badge" style="background-color: green">순간</span>
+					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
+					  </li>
+					</ul>
 				</div>
 			</div>
 		</div>
