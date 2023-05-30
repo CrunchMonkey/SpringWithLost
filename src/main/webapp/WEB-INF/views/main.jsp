@@ -39,7 +39,8 @@
 		
 		var destroyerSynergyArr = [];
 		var gunlancerSynergyArr = [];
-		var json = [{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'},
+		var json = [
+			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'},
 			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '증오의 함성', 'kind' : '순간', 'effect' : '12.0초간 약점을 노출시켜 대상이 자신 및 파티원에게 받는 피해를 4.0% 증가시킨다.헤드 어택 및 백 어택의 경우, 받는 피해 효과가 추가로 5.0% 증가한다..'},
 			]; //추후 데이터베이스로 관리 예정
 		
@@ -54,6 +55,29 @@
 					$("#" + startUlId).sortable("cancel"); //취소
 				} else if($("#" + startUlId).hasClass("classSortTable") && $(this).hasClass("partySortTable")){ //클래스 -> 파티
 					$("#" + startUlId).append(startLiHtml); //클래스 채워주기
+					if(this.id == "firstPartysortable") {
+						alert("첫번째 파티");
+						
+						for(var i=0; i<json.length; i++) {
+							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
+								$("#firstPartyConstantSynergy").append(""
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
+									    + json[i].effect
+									+ "</li>"
+									+ ""); //상시시너지
+							}
+						}
+						
+						//var s2 = $("#firstPartyMomentSynergy").children("li"); //순간시너지
+						
+					} else if(this.id == "secondPartysortable") {
+						alert("두번째 파티");
+						var s1 = $("#secondPartyConstantSynergy").children("li");
+						var s2 = $("#secondPartyMomentSynergy").children("li");
+					}
 				} else if($("#" + startUlId).hasClass("partySortTable") && $(this).hasClass("classSortTable")){ //파티 -> 클래스
 					$("#" + this.id + " #" + ui.item[0].id).first().remove(); //클래스 삭제
 					
