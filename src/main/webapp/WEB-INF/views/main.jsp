@@ -55,30 +55,61 @@
 					$("#" + startUlId).sortable("cancel"); //취소
 				} else if($("#" + startUlId).hasClass("classSortTable") && $(this).hasClass("partySortTable")){ //클래스 -> 파티
 					$("#" + startUlId).append(startLiHtml); //클래스 채워주기
-					if(this.id == "firstPartysortable") {
-						alert("첫번째 파티");
-						
+					
+					if(this.id == "firstPartysortable") { //첫번째파티 상시시너지
 						for(var i=0; i<json.length; i++) {
 							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
 								$("#firstPartyConstantSynergy").append(""
-									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center\">"
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
 									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
 									    + json[i].effect
 									+ "</li>"
 									+ ""); //상시시너지
+							} else if(json[i].jobId == ui.item[0].id && json[i].kind == "순간") { //첫번째파티 순간시너지
+								$("#firstPartyMomentSynergy").append(""
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
+									    + json[i].effect
+									+ "</li>"
+									+ ""); //순간시너지
 							}
-						}
-						
-						//var s2 = $("#firstPartyMomentSynergy").children("li"); //순간시너지
-						
-					} else if(this.id == "secondPartysortable") {
-						alert("두번째 파티");
-						var s1 = $("#secondPartyConstantSynergy").children("li");
-						var s2 = $("#secondPartyMomentSynergy").children("li");
+						}		
+					} else if(this.id == "secondPartysortable") { //두번째파티 상시시너지
+						for(var i=0; i<json.length; i++) {
+							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
+								$("#secondPartyConstantSynergy").append(""
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
+									    + json[i].effect
+									+ "</li>"
+									+ ""); //상시시너지
+							} else if(json[i].jobId == ui.item[0].id && json[i].kind == "순간") { //두번째파티 순간시너지
+								$("#secondPartyMomentSynergy").append(""
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
+									    + json[i].effect
+									+ "</li>"
+									+ ""); //순간시너지
+							}
+						}	
 					}
 				} else if($("#" + startUlId).hasClass("partySortTable") && $(this).hasClass("classSortTable")){ //파티 -> 클래스
+					if(startUlId == "firstPartysortable") {
+						$("#firstPartyConstantSynergy").children("li." + ui.item[0].id).remove();
+						$("#firstPartyMomentSynergy").children("li." + ui.item[0].id).remove();
+					} else if(startUlId == "secondPartysortable") {
+						$("#secondPartyConstantSynergy").children("li." + ui.item[0].id).remove();
+						$("#secondPartyMomentSynergy").children("li." + ui.item[0].id).remove();
+					}
+				
 					$("#" + this.id + " #" + ui.item[0].id).first().remove(); //클래스 삭제
 					
 				}	
@@ -254,6 +285,8 @@
 				</div>
 				<!-- 1파티 순간 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
+					<ul id="firstPartyMomentSynergy" class="list-group">
+					</ul>
 				</div>
 			</div>
 			
