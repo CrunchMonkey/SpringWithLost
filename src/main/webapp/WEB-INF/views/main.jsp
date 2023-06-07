@@ -56,6 +56,18 @@
 				} else if($("#" + startUlId).hasClass("classSortTable") && $(this).hasClass("partySortTable")){ //클래스 -> 파티
 					$("#" + startUlId).append(startLiHtml); //클래스 채워주기
 					
+					var count = 0;
+					var currentChildren = $("#" + this.id).children("li");
+					
+					for(var i=0; i<currentChildren.length; i++) { //파티에 중복직업이 있는지 검사
+						if(currentChildren[i].id == ui.item[0].id) {
+							count++;
+						}
+						if(count == 2) { //클래스 두개이므로 시너지 업데이트 할 필요없음
+							return;
+						}
+					}
+					
 					if(this.id == "firstPartysortable") { //첫번째파티 상시시너지
 						for(var i=0; i<json.length; i++) {
 							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
@@ -102,6 +114,20 @@
 						}	
 					}
 				} else if($("#" + startUlId).hasClass("partySortTable") && $(this).hasClass("classSortTable")){ //파티 -> 클래스
+					$("#" + this.id + " #" + ui.item[0].id).first().remove(); //클래스 삭제
+					
+					var count = 0;
+					var currentChildren = $("#" + startUlId).children("li");
+					
+					for(var i=0; i<currentChildren.length; i++) { //파티에 중복직업이 있는지 검사
+						if(currentChildren[i].id == ui.item[0].id) {
+							count++;
+						}
+						if(count == 1) { //클래스 남아있으므로 시너지 삭제 불필요
+							return;
+						}
+					}
+					
 					if(startUlId == "firstPartysortable") {
 						$("#firstPartyConstantSynergy").children("li." + ui.item[0].id).remove();
 						$("#firstPartyMomentSynergy").children("li." + ui.item[0].id).remove();
@@ -110,7 +136,7 @@
 						$("#secondPartyMomentSynergy").children("li." + ui.item[0].id).remove();
 					}
 				
-					$("#" + this.id + " #" + ui.item[0].id).first().remove(); //클래스 삭제
+					
 					
 				}	
 			},
@@ -275,12 +301,7 @@
 				<!-- 1파티 상시 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
 					<ul id="firstPartyConstantSynergy" class="list-group">
-					  <li class="list-group-item d-flex justify-content-between align-items-center">
-					    <span class="badge" style="background-color: red">용맹의포효</span>
-					    <span class="badge" style="background-color: blue">배틀마스터</span>
-					    <span class="badge" style="background-color: green">순간</span>
-					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
-					  </li>
+
 					</ul>
 				</div>
 				<!-- 1파티 순간 시너지 -->
@@ -309,35 +330,18 @@
 				<!-- 2파티 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
 					<ul id="secondPartyConstantSynergy" class="list-group">
-					  <li class="list-group-item d-flex justify-content-between align-items-center">
-					    <span class="badge" style="background-color: red">용맹의포효</span>
-					    <span class="badge" style="background-color: blue">배틀마스터</span>
-					    <span class="badge" style="background-color: green">순간</span>
-					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
-					  </li>
-					  <li class="list-group-item d-flex justify-content-between align-items-center">
-					    <span class="badge" style="background-color: red">증오의함성</span>
-					    <span class="badge" style="background-color: blue">워로드</span>
-					    <span class="badge" style="background-color: orange">순간</span>
-					    12.0초간 약점을 노출시켜 대상이 자신 및 파티원에게 받는 피해를 4.0% 증가시킨다.헤드 어택 및 백 어택의 경우, 받는 피해 효과가 추가로 5.0% 증가한다.
-					  </li>
-					  <li class="list-group-item d-flex justify-content-between align-items-center">
-					    <span class="badge" style="background-color: red">배쉬</span>
-					    <span class="badge" style="background-color: blue">워로드</span>
-					    <span class="badge" style="background-color: green">상시</span>
-					    공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.
-					  </li>
+
 					</ul>
 				</div>
 				<!-- 2파티 순간 시너지 -->
 				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
 					<ul id="secondPartyMomentSynergy" class="list-group">
-					  <li class="list-group-item d-flex justify-content-between align-items-center">
+					  <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
 					    <span class="badge" style="background-color: red">용맹의포효</span>
 					    <span class="badge" style="background-color: blue">배틀마스터</span>
 					    <span class="badge" style="background-color: green">순간</span>
 					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
-					  </li>
+					  </li> -->
 					</ul>
 				</div>
 			</div>
