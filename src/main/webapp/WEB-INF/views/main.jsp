@@ -153,10 +153,10 @@
 <body>
 	<!-- 전체화면 -->
 	<div class="container" style="width: 1620px; height: 1280px; margin: 0px">
-		<div class="row" style="width: 100%; height: 100%">
-			<div class="col-md-9" style="height: 45%;">
+		<div class="row" style="width: 100%; height: 25%">
+			<div class="col-md-12" style="height: 100%;">
 				<div class="container" style="width: 100%; height: 100%; padding: 0px">
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -168,11 +168,11 @@
 								<li id="gunlancer" class="list-group-item defaultWarrior" style="">워로드</li>
 								<li id="berserker" class="list-group-item defaultWarrior" style="">버서커</li>
 								<li id="paladin" class="list-group-item defaultWarrior" style="">홀리나이트</li>
-								<li id="Slayer" class="list-group-item defaultWarrior" style="">슬레이어</li>
+								<li id="slayer" class="list-group-item defaultWarrior" style="">슬레이어</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -180,15 +180,15 @@
 							  </div>
 							</nav>
 							<ul id="defaultMartialArtist" class="list-group classSortTable droptrue ui-sortable default"  style="padding-left: 10px">
-								<li class="list-group-item" style="">스트라이커</li>
-								<li class="list-group-item" style="">배틀마스터</li>
-								<li class="list-group-item" style="">인파이터</li>
-								<li class="list-group-item" style="">기공사</li>
-								<li class="list-group-item" style="">창술사</li>
+								<li id="striker" class="list-group-item" style="">스트라이커</li>
+								<li id="battleMaster" class="list-group-item" style="">배틀마스터</li>
+								<li id="infighter" class="list-group-item" style="">인파이터</li>
+								<li id="soulMaster" class="list-group-item" style="">기공사</li>
+								<li id="lanceMaster" class="list-group-item" style="">창술사</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -196,15 +196,15 @@
 							  </div>
 							</nav>
 							<ul id="defaultGunner" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li class="list-group-item" style="">데빌헌터</li>
-								<li class="list-group-item" style="">블래스터</li>
-								<li class="list-group-item" style="">호크아이</li>
-								<li class="list-group-item" style="">스카우터</li>
-								<li class="list-group-item" style="">건슬링어</li>
+								<li id="devilHunter" class="list-group-item" style="">데빌헌터</li>
+								<li id="blaster" class="list-group-item" style="">블래스터</li>
+								<li id="hawkEye" class="list-group-item" style="">호크아이</li>
+								<li id="scouter" class="list-group-item" style="">스카우터</li>
+								<li id="gunslinger" class="list-group-item" style="">건슬링어</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -212,15 +212,20 @@
 							  </div>
 							</nav>
 							<ul id="defaultMage" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li class="list-group-item" style="">바드</li>
-								<li class="list-group-item" style="">서머너</li>
-								<li class="list-group-item" style="">아르카나</li>
-								<li class="list-group-item" style="">소서리스</li>
+								<li id="bard" class="list-group-item" style="">바드</li>
+								<li id="summoner" class="list-group-item" style="">서머너</li>
+								<li id="arcana" class="list-group-item" style="">아르카나</li>
+								<li id="sorceress" class="list-group-item" style="">소서리스</li>
 							</ul>
 						</div>
 					</div>
-					
-					<div class="col-md-3" style="height: 50%;">
+				</div>
+			</div>
+		</div>
+		<div class="row" style="width: 100%; height: 25%">
+			<div class="col-md-12" style="height: 100%;">
+				<div class="container" style="width: 100%; height: 100%; padding: 0px">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -228,14 +233,14 @@
 							  </div>
 							</nav>
 							<ul id="defaultAssassin" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li class="list-group-item" style="">데모닉</li>
-								<li class="list-group-item" style="">블레이드</li>
-								<li class="list-group-item" style="">리퍼</li>
-								<li class="list-group-item" style="">소울이터</li>
+								<li id="demonic" class="list-group-item" style="">데모닉</li>
+								<li id="blade" class="list-group-item" style="">블레이드</li>
+								<li id="reaper" class="list-group-item" style="">리퍼</li>
+								<li id="tempJob" class="list-group-item" style="">소울이터</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -243,12 +248,12 @@
 							  </div>
 							</nav>
 							<ul id="defaultSpecialist" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li class="list-group-item" style="">도화가</li>
-								<li class="list-group-item" style="">기상술사</li>
+								<li id="artist" class="list-group-item" style="">도화가</li>
+								<li id="aeromancer" class="list-group-item" style="">기상술사</li>
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -260,7 +265,7 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-md-3" style="height: 50%;">
+					<div class="col-md-3" style="height: 100%;">
 						<div class="col-md-12 sortableDiv">
 							<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 							  <div class="container-fluid" style="border: solid #F7D99D 1px">
@@ -274,78 +279,82 @@
 					</div>
 				</div>
 			</div>
-			
-			<!-- 유저검색창 -->
-			<div class="col-md-3" style="height: 45%; background-color: orange">
-			</div>
-			
+		</div>
+		<div class="row" style="width: 100%; height: auto">
 			<!-- 1파티 -->
-			<div class="col-md-2" style="height: 25%;">
+			<div class="col-md-2">
 				<div class="col-md-12 sortableDiv">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 					  <div class="container-fluid" style="border: solid #F7D99D 1px">
 					    <a class="navbar-brand" href="#"><font color="#F7D99D">1파티</font></a>
 					  </div>
 					</nav>
-					<ul id="firstPartysortable" class="list-group partySortTable droptrue ui-sortable"  style="padding-left: 10px">
-						<li class="list-group-item" style="">Dog</li>
-						<li class="list-group-item" style="">Dog</li>
-						<li class="list-group-item" style="">Dog</li>
-						<li class="list-group-item" style="">Dog</li>
+					<ul id="firstPartysortable" class="list-group partySortTable droptrue ui-sortable"  style="margin-bottom: 0px; padding-left: 10px">
 					</ul>
 				</div>
 			</div>
 			
 			<!-- 1파티 시너지 -->
-			<div class="col-md-10" style="height: 25%; background-color: #1C1C20; padding: 15px">
+			<div class="col-md-10" style="background-color: #1C1C20; padding: 15px">
 				<!-- 1파티 상시 시너지 -->
-				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
-					<ul id="firstPartyConstantSynergy" class="list-group">
+				<div class="col-md-12" style="background-color: #F7D99D; margin-bottom: 10px">
+					<ul id="firstPartyConstantSynergy" class="list-group"  style="margin-bottom: 0px; padding-left: 10px">
 
 					</ul>
 				</div>
 				<!-- 1파티 순간 시너지 -->
-				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
-					<ul id="firstPartyMomentSynergy" class="list-group">
+				<div class="col-md-12" style="background-color: #F7D99D">
+					<ul id="firstPartyMomentSynergy" class="list-group"  style="margin-bottom: 0px; padding-left: 10px">
 					</ul>
 				</div>
 			</div>
-			
+		</div>
+		<div class="row" style="width: 100%; height: auto">
 			<!-- 2파티 -->
-			<div class="col-md-2" style="height: 25%;">
+			<div class="col-md-2">
 				<div class="col-md-12 sortableDiv">
 					<nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: 0px">
 					  <div class="container-fluid" style="border: solid #F7D99D 1px">
 					    <a class="navbar-brand" href="#"><font color="#F7D99D">2파티</font></a>
 					  </div>
 					</nav>
-					<ul id="secondPartysortable" class="list-group partySortTable droptrue ui-sortable" style="padding-left: 10px">
-						<li class="list-group-item">Dog</li>
+					<ul id="secondPartysortable" class="list-group partySortTable droptrue ui-sortable" style="margin-bottom: 0px; padding-left: 10px">
 					</ul>
 				</div>
 			</div>
 			
 			<!-- 2파티 시너지 -->
-			<div class="col-md-10" style="height: auto; background-color: #1C1C20; padding: 15px">
+			<div class="col-md-10" style="background-color: #1C1C20; padding: 15px">
 				<!-- 2파티 시너지 -->
-				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
-					<ul id="secondPartyConstantSynergy" class="list-group">
+				<div class="col-md-12" style="background-color: #F7D99D; margin-bottom: 10px">
+					<ul id="secondPartyConstantSynergy" class="list-group" style="margin-bottom: 0px; padding-left: 10px">
 
 					</ul>
 				</div>
 				<!-- 2파티 순간 시너지 -->
-				<div class="col-md-12" style="height: 50%; background-color: #F7D99D">
-					<ul id="secondPartyMomentSynergy" class="list-group">
-					  <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
-					    <span class="badge" style="background-color: red">용맹의포효</span>
-					    <span class="badge" style="background-color: blue">배틀마스터</span>
-					    <span class="badge" style="background-color: green">순간</span>
-					    피격된 적은 6초 동안 치명타 저항률이 3.0% 감소한다.
-					  </li> -->
+				<div class="col-md-12" style="background-color: #F7D99D">
+					<ul id="secondPartyMomentSynergy" class="list-group" style="margin-bottom: 0px; padding-left: 10px">
 					</ul>
 				</div>
 			</div>
 		</div>
-	</div>
+					
+			
+			
+			<!-- 유저검색창 -->
+			<!-- <div class="col-md-3" style="height: 45%; background-color: orange">
+			</div> -->
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			</div>
 </body>
 </html>
