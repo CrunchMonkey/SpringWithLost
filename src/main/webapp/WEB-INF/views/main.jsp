@@ -54,11 +54,18 @@
 				if($(this).hasClass("classSortTable") && $("#" + startUlId).hasClass("classSortTable")) { //클래스 -> 클래스
 					$("#" + startUlId).sortable("cancel"); //취소
 				} else if($("#" + startUlId).hasClass("classSortTable") && $(this).hasClass("partySortTable")){ //클래스 -> 파티
+					
+					
 					$("#" + startUlId).append(startLiHtml); //클래스 채워주기
 					
 					var count = 0;
 					var currentChildren = $("#" + this.id).children("li");
 					
+					if(currentChildren.length > 4) { //파티 4명 제한
+						$("#" + startUlId).sortable("cancel"); //취소
+						$("#" + startUlId + " #" + ui.item[0].id).first().remove(); //클래스 삭제(다시 돌아가므로)
+						return;
+					}
 					for(var i=0; i<currentChildren.length; i++) { //파티에 중복직업이 있는지 검사
 						if(currentChildren[i].id == ui.item[0].id) {
 							count++;

@@ -3,17 +3,17 @@ package com.example.demo.sample.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.sample.mapper.SampleMapper;
+import com.example.demo.sample.mapper.mainMapper;
 
 @Service
-public class SampleService {
+public class mainService {
 	
 	@Autowired
-	private SampleMapper sampleMapper;
+	private mainMapper mainMapper;
 	
 	public String selectTest() {
 		System.out.println("오됨");
-		return sampleMapper.selectTest();
+		return mainMapper.selectTest();
 	}
 
 }
