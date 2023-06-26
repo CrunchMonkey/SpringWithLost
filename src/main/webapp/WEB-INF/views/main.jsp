@@ -1,8 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri ="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
+	
   <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <style>
@@ -80,7 +81,7 @@
 							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
 								$("#firstPartyConstantSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
 									    + json[i].effect
@@ -89,7 +90,7 @@
 							} else if(json[i].jobId == ui.item[0].id && json[i].kind == "순간") { //첫번째파티 순간시너지
 								$("#firstPartyMomentSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
 									    + json[i].effect
@@ -102,7 +103,7 @@
 							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
 								$("#secondPartyConstantSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
 									    + json[i].effect
@@ -111,7 +112,7 @@
 							} else if(json[i].jobId == ui.item[0].id && json[i].kind == "순간") { //두번째파티 순간시너지
 								$("#secondPartyMomentSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">용맹의포효</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
 									    + json[i].effect
@@ -134,7 +135,7 @@
 							return;
 						}
 					}
-					
+					 
 					if(startUlId == "firstPartysortable") {
 						$("#firstPartyConstantSynergy").children("li." + ui.item[0].id).remove();
 						$("#firstPartyMomentSynergy").children("li." + ui.item[0].id).remove();
@@ -158,6 +159,7 @@
   </script>
 </head>
 <body>
+<input type="text" name="ex" placeholder="Enter your username" value="${test}">
 	<!-- 전체화면 -->
 	<div class="container" style="width: 1620px; height: 1280px; margin: 0px">
 		<div class="row" style="width: 100%; height: 25%">
