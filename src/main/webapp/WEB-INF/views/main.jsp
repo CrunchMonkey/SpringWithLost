@@ -40,7 +40,10 @@
 		
 		var destroyerSynergyArr = [];
 		var gunlancerSynergyArr = [];
-		var json = [
+		
+		var jsonSkill2 = JSON.parse($("#jsonSkillString").val());
+		
+		var jsonSkill = [
 			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'},
 			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '증오의 함성', 'kind' : '순간', 'effect' : '12.0초간 약점을 노출시켜 대상이 자신 및 파티원에게 받는 피해를 4.0% 증가시킨다.헤드 어택 및 백 어택의 경우, 받는 피해 효과가 추가로 5.0% 증가한다..'},
 			]; //추후 데이터베이스로 관리 예정
@@ -77,45 +80,45 @@
 					}
 					
 					if(this.id == "firstPartysortable") { //첫번째파티 상시시너지
-						for(var i=0; i<json.length; i++) {
-							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
+						for(var i=0; i<jsonSkill.length; i++) {
+							if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "상시") {
 								$("#firstPartyConstantSynergy").append(""
-									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
-									    + json[i].effect
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
+									    + jsonSkill[i].effect
 									+ "</li>"
 									+ ""); //상시시너지
-							} else if(json[i].jobId == ui.item[0].id && json[i].kind == "순간") { //첫번째파티 순간시너지
+							} else if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "순간") { //첫번째파티 순간시너지
 								$("#firstPartyMomentSynergy").append(""
-									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
-									    + json[i].effect
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
+									    + jsonSkill[i].effect
 									+ "</li>"
 									+ ""); //순간시너지
 							}
 						}		
 					} else if(this.id == "secondPartysortable") { //두번째파티 상시시너지
-						for(var i=0; i<json.length; i++) {
-							if(json[i].jobId == ui.item[0].id && json[i].kind == "상시") {
+						for(var i=0; i<jsonSkill.length; i++) {
+							if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "상시") {
 								$("#secondPartyConstantSynergy").append(""
-									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
-									    + json[i].effect
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
+									    + jsonSkill[i].effect
 									+ "</li>"
 									+ ""); //상시시너지
-							} else if(json[i].jobId == ui.item[0].id && json[i].kind == "순간") { //두번째파티 순간시너지
+							} else if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "순간") { //두번째파티 순간시너지
 								$("#secondPartyMomentSynergy").append(""
-									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + json[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + json[i].skill + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: blue\">" + json[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + json[i].kind + "</span>"
-									    + json[i].effect
+									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
+									    + jsonSkill[i].effect
 									+ "</li>"
 									+ ""); //순간시너지
 							}
@@ -159,7 +162,7 @@
   </script>
 </head>
 <body>
-<input type="text" name="ex" placeholder="Enter your username" value="${test}">
+<input type="hidden" id="jsonSkillString" name="jsonSkillString" placeholder="Enter your username" value="${jsonSkillString.skillNm}">
 	<!-- 전체화면 -->
 	<div class="container" style="width: 1620px; height: 1280px; margin: 0px">
 		<div class="row" style="width: 100%; height: 25%">

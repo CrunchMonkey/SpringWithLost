@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.demo.sample.mapper.mainMapper">
-	<select id="selectTest" resultType="mainModel">
-		SELECT COUNT(job_id) FROM job
+	<select id="selectSkill" resultType="mainModel">
+		SELECT job_id as jobId 
+			 , skill_cd as skillCd
+			 , skill_nm as skillNm
+			 , skill_eff as skillEff
+			 , skill_time as skillTime
+			 , major as major
+		  FROM skill
 	</select>
 </mapper>
