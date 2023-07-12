@@ -2,8 +2,6 @@ package com.example.demo.sample.controller;
 
 import java.util.ArrayList;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,18 +24,13 @@ public class mainController {
 		return "index";
 	}
 	
-	@SuppressWarnings("static-access")
 	@RequestMapping(value="/main", method = {RequestMethod.POST, RequestMethod.GET})
 	public String main(Model model) throws Exception {
-		JSONObject jsonObj = new JSONObject();
-		JSONArray jsonArr = new JSONArray();
 		ObjectMapper mapper = new ObjectMapper();
-		
 		ArrayList<mainModel> skill = mainService.selectSkill();
 		
-		String a = mapper.writeValueAsString(skill);
-		//model.addAttribute("jsonSkillString", skill.get(0));
-		//model.addAttribute("jsonSkillStringString", jsonArr.writeJSONString(skill.get(0)));
+		String jsonSkillString = mapper.writeValueAsString(skill);
+		model.addAttribute("jsonSkillString", jsonSkillString);
 		return "main";
 	}
 }

@@ -31,8 +31,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
   <script>
-  
-  $( 
+  $(
 	function() {
 		var startUlId;
 		var startLiHtml;
@@ -41,7 +40,8 @@
 		var destroyerSynergyArr = [];
 		var gunlancerSynergyArr = [];
 		
-		var jsonSkill2 = JSON.parse($("#jsonSkillString").val());
+		var jsonSkill2 = $("#jsonSkillString").val();//JSON.parse();
+		var aa = ${jsonSkillString};
 		
 		var jsonSkill = [
 			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'},
@@ -153,16 +153,12 @@
 			},
 			connectWith: "ul"
 		});
-		
-		
-		
-		
 	  } 
 	);
   </script>
 </head>
 <body>
-<input type="hidden" id="jsonSkillString" name="jsonSkillString" placeholder="Enter your username" value="${jsonSkillString.skillNm}">
+<input type="hidden" id="jsonSkillString" name="jsonSkillString" value="${jsonSkillString}">
 	<!-- 전체화면 -->
 	<div class="container" style="width: 1620px; height: 1280px; margin: 0px">
 		<div class="row" style="width: 100%; height: 25%">
