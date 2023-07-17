@@ -41,12 +41,12 @@
 		var gunlancerSynergyArr = [];
 		
 		var jsonSkill2 = $("#jsonSkillString").val();//JSON.parse();
-		var aa = ${jsonSkillString};
+		var jsonSkill = ${jsonSkillString};
 		
-		var jsonSkill = [
+		/* var jsonSkill = [
 			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '배쉬', 'kind' : '상시', 'effect' : '공격에 적중된 적들의 모든 방어력을 10.0초간 12.0% 감소시킨다.'},
 			{'jobId' : 'gunlancer', 'job' : '워로드', 'skill' : '증오의 함성', 'kind' : '순간', 'effect' : '12.0초간 약점을 노출시켜 대상이 자신 및 파티원에게 받는 피해를 4.0% 증가시킨다.헤드 어택 및 백 어택의 경우, 받는 피해 효과가 추가로 5.0% 증가한다..'},
-			]; //추후 데이터베이스로 관리 예정
+			]; */ //추후 데이터베이스로 관리 예정
 		
 		//sortTable
 		$("ul.droptrue").sortable({
@@ -81,44 +81,44 @@
 					
 					if(this.id == "firstPartysortable") { //첫번째파티 상시시너지
 						for(var i=0; i<jsonSkill.length; i++) {
-							if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "상시") {
+							if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].skillTime == "상시") {
 								$("#firstPartyConstantSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skillNm + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
-									    + jsonSkill[i].effect
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].skillTime + "</span>"
+									    + jsonSkill[i].skillEff
 									+ "</li>"
 									+ ""); //상시시너지
-							} else if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "순간") { //첫번째파티 순간시너지
+							} else if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].skillTime == "순간") { //첫번째파티 순간시너지
 								$("#firstPartyMomentSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skillNm + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
-									    + jsonSkill[i].effect
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].skillTime + "</span>"
+									    + jsonSkill[i].skillEff
 									+ "</li>"
 									+ ""); //순간시너지
 							}
 						}		
 					} else if(this.id == "secondPartysortable") { //두번째파티 상시시너지
 						for(var i=0; i<jsonSkill.length; i++) {
-							if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "상시") {
+							if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].skillTime == "상시") {
 								$("#secondPartyConstantSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skillNm + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
-									    + jsonSkill[i].effect
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].skillTime + "</span>"
+									    + jsonSkill[i].skillEff
 									+ "</li>"
 									+ ""); //상시시너지
-							} else if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].kind == "순간") { //두번째파티 순간시너지
+							} else if(jsonSkill[i].jobId == ui.item[0].id && jsonSkill[i].skillTime == "순간") { //두번째파티 순간시너지
 								$("#secondPartyMomentSynergy").append(""
 									+ "<li class=\"list-group-item d-flex justify-content-between align-items-center " + jsonSkill[i].jobId +"\">"
-									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skill + "</span>"
+									    + "<span class=\"badge\" style=\"background-color: red\">" + jsonSkill[i].skillNm + "</span>"
 									    + "<span class=\"badge\" style=\"background-color: blue\">" + jsonSkill[i].job + "</span>"
-									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].kind + "</span>"
-									    + jsonSkill[i].effect
+									    + "<span class=\"badge\" style=\"background-color: green\">" + jsonSkill[i].skillTime + "</span>"
+									    + jsonSkill[i].skillEff
 									+ "</li>"
 									+ ""); //순간시너지
 							}
@@ -189,10 +189,10 @@
 							</nav>
 							<ul id="defaultMartialArtist" class="list-group classSortTable droptrue ui-sortable default"  style="padding-left: 10px">
 								<li id="striker" class="list-group-item" style="">스트라이커</li>
-								<li id="battleMaster" class="list-group-item" style="">배틀마스터</li>
-								<li id="infighter" class="list-group-item" style="">인파이터</li>
-								<li id="soulMaster" class="list-group-item" style="">기공사</li>
-								<li id="lanceMaster" class="list-group-item" style="">창술사</li>
+								<li id="wardancer" class="list-group-item" style="">배틀마스터</li>
+								<li id="scrapper" class="list-group-item" style="">인파이터</li>
+								<li id="soulfist" class="list-group-item" style="">기공사</li>
+								<li id="glaivier" class="list-group-item" style="">창술사</li>
 							</ul>
 						</div>
 					</div>
@@ -204,10 +204,10 @@
 							  </div>
 							</nav>
 							<ul id="defaultGunner" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li id="devilHunter" class="list-group-item" style="">데빌헌터</li>
-								<li id="blaster" class="list-group-item" style="">블래스터</li>
-								<li id="hawkEye" class="list-group-item" style="">호크아이</li>
-								<li id="scouter" class="list-group-item" style="">스카우터</li>
+								<li id="deadeye" class="list-group-item" style="">데빌헌터</li>
+								<li id="artillerist" class="list-group-item" style="">블래스터</li>
+								<li id="sharpshooter" class="list-group-item" style="">호크아이</li>
+								<li id="machinist" class="list-group-item" style="">스카우터</li>
 								<li id="gunslinger" class="list-group-item" style="">건슬링어</li>
 							</ul>
 						</div>
@@ -222,7 +222,7 @@
 							<ul id="defaultMage" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
 								<li id="bard" class="list-group-item" style="">바드</li>
 								<li id="summoner" class="list-group-item" style="">서머너</li>
-								<li id="arcana" class="list-group-item" style="">아르카나</li>
+								<li id="arcanist" class="list-group-item" style="">아르카나</li>
 								<li id="sorceress" class="list-group-item" style="">소서리스</li>
 							</ul>
 						</div>
@@ -241,8 +241,8 @@
 							  </div>
 							</nav>
 							<ul id="defaultAssassin" class="list-group classSortTable droptrue  ui-sortable"  style="padding-left: 10px">
-								<li id="demonic" class="list-group-item" style="">데모닉</li>
-								<li id="blade" class="list-group-item" style="">블레이드</li>
+								<li id="shadowhunter" class="list-group-item" style="">데모닉</li>
+								<li id="deathblade" class="list-group-item" style="">블레이드</li>
 								<li id="reaper" class="list-group-item" style="">리퍼</li>
 								<li id="tempJob" class="list-group-item" style="">소울이터</li>
 							</ul>

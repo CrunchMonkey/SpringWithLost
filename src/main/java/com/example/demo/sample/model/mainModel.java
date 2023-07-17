@@ -7,6 +7,8 @@ public class mainModel {
 	String skillEff;
 	String skillTime;
 	String major;
+	String job;
+	
 	public String getJobId() {
 		return jobId;
 	}
@@ -42,5 +44,11 @@ public class mainModel {
 	}
 	public void setMajor(String major) {
 		this.major = major;
+	}
+	public String getJob() {
+		return job;
+	}
+	public void setJob(String job) {
+		this.job = job;
 	}
 }

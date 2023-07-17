@@ -2,12 +2,14 @@
 
 <mapper namespace="com.example.demo.sample.mapper.mainMapper">
 	<select id="selectSkill" resultType="mainModel">
-		SELECT job_id as jobId 
+		SELECT skill.job_id as jobId 
+			 , job.job_nm as job
 			 , skill_cd as skillCd
 			 , skill_nm as skillNm
 			 , skill_eff as skillEff
 			 , skill_time as skillTime
 			 , major as major
-		  FROM skill
+		  FROM skill inner join job
+		 	on skill.job_id = job.job_id
 	</select>
 </mapper>
